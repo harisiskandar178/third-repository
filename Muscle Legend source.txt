@@ -52,7 +52,14 @@ local button16 = Instance.new("TextButton")
 local button17 = Instance.new("TextButton")
 local button18 = Instance.new("TextButton")
 local button19 = Instance.new("TextButton")
-
+local button20 = Instance.new("TextButton")
+local button21 = Instance.new("TextButton")
+local button22 = Instance.new("TextButton")
+local button23 = Instance.new("TextButton")
+local button24 = Instance.new("TextButton")
+local button25 = Instance.new("TextButton")
+local button26 = Instance.new("TextButton")
+local button27 = Instance.new("TextButton")
 
 ---end
 local UIGridLayout = Instance.new("UIGridLayout")
@@ -346,9 +353,7 @@ end
 end)
 
 button5.Name = "button5"
-
 button5.Parent = ScrollingFrame
-
 button5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 button5.Size = UDim2.new(0, 200, 0, 50)
 button5.Font = Enum.Font.GothamBold
@@ -1077,6 +1082,10 @@ button19.Text = "Treadmill ✅"
 getgenv().treadmill = true
 while getgenv().treadmill do
 wait(0.1)
+local A_1 = "changeSize"
+local A_2 = 0
+local Event = game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote
+Event:InvokeServer(A_1, A_2)
 plr.Character:WaitForChild("Humanoid").WalkSpeed = 13
 plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(223.790634, 8.19207478, 221.244965, 0.271959662, -3.77772764e-08, -0.962308645, -1.1013805e-08, 1, -4.23695532e-08, 0.962308645, 2.21214886e-08, 0.271959662)
 local vim = game:service("VirtualInputManager")
@@ -1092,6 +1101,10 @@ button19.Text = "Treadmill ❎"
 getgenv().treadmill = false
 while getgenv().treadmill do
 wait(0.1)
+local A_1 = "changeSize"
+local A_2 = 0
+local Event = game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote
+Event:InvokeServer(A_1, A_2)
 plr.Character:WaitForChild("Humanoid").WalkSpeed = 13
 plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(223.790634, 8.19207478, 221.244965, 0.271959662, -3.77772764e-08, -0.962308645, -1.1013805e-08, 1, -4.23695532e-08, 0.962308645, 2.21214886e-08, 0.271959662)
 local vim = game:service("VirtualInputManager")
@@ -1104,6 +1117,381 @@ local vim = game:service("VirtualInputManager")
 end
 end
 end)
+
+button20.Name = "button20"
+button20.Parent = ScrollingFrame
+button20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button20.Size = UDim2.new(0, 200, 0, 50)
+button20.Font = Enum.Font.GothamBold
+button20.Text = "Rebirth ❎"
+button20.TextColor3 = Color3.fromRGB(0, 0, 0)
+button20.TextSize = 13.000
+button20.MouseButton1Click:Connect(function()
+	if button20.Text == "Rebirth ❎" then
+button20.Text = "Rebirth ✅"
+getgenv().rebirth = true
+while getgenv().rebirth do
+wait()
+local A_1 = "rebirthRequest"
+local Event = game:GetService("ReplicatedStorage").rEvents.rebirthRemote
+Event:InvokeServer(A_1)
+end
+elseif button20.Text == "Rebirth ✅" then
+button20.Text = "Rebirth ❎"
+getgenv().rebirth = false
+end
+end)
+
+button21.Name = "button21"
+button21.Parent = ScrollingFrame
+button21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button21.Size = UDim2.new(0, 200, 0, 50)
+button21.Font = Enum.Font.GothamBold
+button21.Text = "Punch speed ❎"
+button21.TextColor3 = Color3.fromRGB(0, 0, 0)
+button21.TextSize = 13.000
+button21.MouseButton1Click:Connect(function()
+	if button21.Text == "Punch speed ❎" then
+button21.Text = "Punch speed ✅"
+getgenv().speed = true
+while getgenv().speed do
+wait()
+game.Players.LocalPlayer.Character:WaitForChild("Punch").attackTime.Value = 0
+end
+if getgenv().speed == false then
+game.Players.LocalPlayer.Character.Punch.attackTime.Value = 0.35
+end
+elseif button21.Text == "Punch speed ✅" then
+button21.Text = "Punch speed ❎"
+getgenv().speed = false
+end
+end)
+
+button22.Name = "button22"
+button22.Parent = ScrollingFrame
+button22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button22.Size = UDim2.new(0, 200, 0, 50)
+button22.Font = Enum.Font.GothamBold
+button22.Text = "Claim All Code"
+button22.TextColor3 = Color3.fromRGB(0, 0, 0)
+button22.TextSize = 13.000
+button22.MouseButton1Click:Connect(function()
+	local A_1 = "superpunch100"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "supermuscle100"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "speedy50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "spacegems50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "Skyagility50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "musclestorm50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "megalift50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "launch250"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "galaxycrystal50"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "frostgems10"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "epicreward500"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait(0.5)
+local A_1 = "MillionWarriors"
+local Event = game:GetService("ReplicatedStorage").rEvents.codeRemote
+Event:InvokeServer(A_1)
+wait()
+local CoreGui = game:GetService("StarterGui")
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "",
+    Text = "Claim Done",
+    Duration = 10,
+})
+end)
+
+button23.Name = "button23"
+button23.Parent = ScrollingFrame
+button23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button23.Size = UDim2.new(0, 200, 0, 50)
+button23.Font = Enum.Font.GothamBold
+button23.Text = "Treadmill v2 ❎"
+button23.TextColor3 = Color3.fromRGB(0, 0, 0)
+button23.TextSize = 13.000
+button23.MouseButton1Click:Connect(function()
+	if button23.Text == "Treadmill v2 ❎" then
+button23.Text = "Treadmill v2 ✅"
+getgenv().Treadmillv2 = true
+while getgenv().Treadmillv2 do
+wait(0.1)
+local A_1 = "changeSize"
+local A_2 = 0
+local Event = game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote
+Event:InvokeServer(A_1, A_2)
+plr.Character:WaitForChild("Humanoid").WalkSpeed = 13
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(237.788208, 5.44251966, 372.808685, 0.043823801, -1.50241579e-08, -0.999039292, -3.81654264e-09, 1, -1.52060213e-08, 0.999039292, 4.47926185e-09, 0.043823801)
+local vim = game:service("VirtualInputManager")
+           vim:SendKeyEvent(true, "W", false, game)
+end
+if getgenv().Treadmillv2 == false then
+wait(0.5)
+local vim = game:service("VirtualInputManager")
+           vim:SendKeyEvent(false, "W", false, game)
+end
+elseif button23.Text == "Treadmill v2 ✅" then
+button23.Text = "Treadmill v2 ❎"
+getgenv().Treadmillv2 = false
+while getgenv().Treadmillv2 do
+wait(0.1)
+local A_1 = "changeSize"
+local A_2 = 0
+local Event = game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote
+Event:InvokeServer(A_1, A_2)
+plr.Character:WaitForChild("Humanoid").WalkSpeed = 13
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(237.788208, 5.44251966, 372.808685, 0.043823801, -1.50241579e-08, -0.999039292, -3.81654264e-09, 1, -1.52060213e-08, 0.999039292, 4.47926185e-09, 0.043823801)
+local vim = game:service("VirtualInputManager")
+           vim:SendKeyEvent(true, "W", false, game)
+end
+if getgenv().Treadmillv2 == false then
+wait(0.5)
+local vim = game:service("VirtualInputManager")
+           vim:SendKeyEvent(false, "W", false, game)
+end
+end
+end)
+
+button24.Name = "button24"
+button24.Parent = ScrollingFrame
+button24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button24.Size = UDim2.new(0, 200, 0, 50)
+button24.Font = Enum.Font.GothamBold
+button24.Text = "Weight v2 ❎"
+button24.TextColor3 = Color3.fromRGB(0, 0, 0)
+button24.TextSize = 13.000
+button24.MouseButton1Click:Connect(function()
+	if button24.Text == "Weight v2 ❎" then
+button24.Text = "Weight v2 ✅"
+getgenv().weightv2 = true
+while getgenv().weightv2 do
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-725.613892, 33.4770432, 1991.86694, -0.45550397, -4.02097271e-08, -0.890233755, -4.63261998e-08, 1, -2.14639808e-08, 0.890233755, 3.14642179e-08, -0.45550397)
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Weight" then
+plr.Character:WaitForChild("Humanoid"):EquipTool(v)
+end
+end
+for i,b in pairs(plr.Character:GetChildren()) do
+if b.Name == "Weight" then
+b:Activate()
+else
+plr.Character:WaitForChild("Weight").repTime.Value = 0.1
+end
+end
+end
+if getgenv().weightv2 == false then
+plr.Character:WaitForChild("Weight").repTime.Value = 1
+wait()
+plr.Character:WaitForChild("Humanoid"):UnequipTools()
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+elseif button24.Text == "Weight v2 ✅" then
+button24.Text = "Weight v2 ❎"
+getgenv().weightv2 = false
+while getgenv().weightv2 do
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-725.613892, 33.4770432, 1991.86694, -0.45550397, -4.02097271e-08, -0.890233755, -4.63261998e-08, 1, -2.14639808e-08, 0.890233755, 3.14642179e-08, -0.45550397)
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Weight" then
+plr.Character:WaitForChild("Humanoid"):EquipTool(v)
+end
+end
+for i,b in pairs(plr.Character:GetChildren()) do
+if b.Name == "Weight" then
+b:Activate()
+else
+plr.Character:WaitForChild("Weight").repTime.Value = 0.1
+end
+end
+end
+if getgenv().weightv2 == false then
+plr.Character:WaitForChild("Weight").repTime.Value = 1
+wait()
+plr.Character:WaitForChild("Humanoid"):UnequipTools()
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+end
+end)
+
+button25.Name = "button25"
+button25.Parent = ScrollingFrame
+button25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button25.Size = UDim2.new(0, 200, 0, 50)
+button25.Font = Enum.Font.GothamBold
+button25.Text = "Kill all ❎"
+button25.TextColor3 = Color3.fromRGB(0, 0, 0)
+button25.TextSize = 13.000
+button25.MouseButton1Click:Connect(function()
+	if button25.Text == "Kill all ❎" then
+button25.Text = "Kill all ✅"
+getgenv().kill = true
+while getgenv().kill do
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-725.613892, 33.4770432, 1991.86694, -0.45550397, -4.02097271e-08, -0.890233755, -4.63261998e-08, 1, -2.14639808e-08, 0.890233755, 3.14642179e-08, -0.45550397)
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Punch" then
+plr.Character:WaitForChild("Humanoid"):EquipTool(v)
+end
+end
+for i,b in pairs(plr.Character:GetChildren()) do
+if b.Name == "Punch" then
+b:Activate()
+end
+end
+for i,c in pairs(game.Players:GetPlayers()) do
+c.Character:WaitForChild("HumanoidRootPart").CFrame = plr.Character:WaitForChild("HumanoidRootPart").CFrame
+end
+end
+if getgenv().kill == false then
+wait(0.3)
+for i,n in pairs(plr.Character:GetChildren()) do
+if n.Name == "Punch" then
+plr.Character:WaitForChild("Humanoid"):UnequipTools(n)
+end
+end
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+elseif button25.Text == "Kill all ✅" then
+button25.Text = "Kill all ❎"
+getgenv().kill = false
+while getgenv().kill do
+wait()
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-725.613892, 33.4770432, 1991.86694, -0.45550397, -4.02097271e-08, -0.890233755, -4.63261998e-08, 1, -2.14639808e-08, 0.890233755, 3.14642179e-08, -0.45550397)
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Punch" then
+plr.Character:WaitForChild("Humanoid"):EquipTool(v)
+end
+end
+for i,b in pairs(plr.Character:GetChildren()) do
+if b.Name == "Punch" then
+b:Activate()
+end
+end
+for i,c in pairs(game.Players:GetPlayers()) do
+c.Character:WaitForChild("HumanoidRootPart").CFrame = plr.Character:WaitForChild("HumanoidRootPart").CFrame
+end
+end
+if getgenv().kill == false then
+wait(0.3)
+for i,n in pairs(plr.Character:GetChildren()) do
+if n.Name == "Punch" then
+plr.Character:WaitForChild("Humanoid"):UnequipTools(n)
+end
+end
+plr.Character:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+end
+end)
+
+button26.Name = "button26"
+button26.Parent = ScrollingFrame
+button26.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button26.Size = UDim2.new(0, 200, 0, 50)
+button26.Font = Enum.Font.GothamBold
+button26.Text = "Join Brawl ❎"
+button26.TextColor3 = Color3.fromRGB(0, 0, 0)
+button26.TextSize = 13.000
+button26.MouseButton1Click:Connect(function()
+	if button26.Text == "Join Brawl ❎" then
+button26.Text = "Join Brawl ✅"
+getgenv().brawl = true
+while getgenv().brawl do
+wait()
+local A_1 = "joinBrawl"
+local Event = game:GetService("ReplicatedStorage").rEvents.brawlEvent
+Event:FireServer(A_1)
+end
+elseif button26.Text == "Join Brawl ✅" then
+button26.Text = "Join Brawl ❎"
+getgenv().brawl = false
+end
+end)
+
+button27.Name = "button27"
+button27.Parent = ScrollingFrame
+button27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button27.Size = UDim2.new(0, 200, 0, 50)
+button27.Font = Enum.Font.GothamBold
+button27.Text = "Fps/AntiLag"
+button27.TextColor3 = Color3.fromRGB(0, 0, 0)
+button27.TextSize = 13.000
+button27.MouseButton1Click:Connect(function()
+	local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+end)
+
+
+
+
 
 
 
